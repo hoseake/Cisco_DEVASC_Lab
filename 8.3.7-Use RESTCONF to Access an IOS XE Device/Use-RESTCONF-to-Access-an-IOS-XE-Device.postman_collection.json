@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "ef3f57be-a672-4b02-8a25-7ce61bcd02bf",
+		"name": "Use-RESTCONF-to-Access-an-IOS-XE-Device",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Send-GET-or-PUT-Requests",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "cisco123!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "cisco",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang-data+json",
+						"type": "default"
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang-data+json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"ietf-interfaces:interface\": {\n \"name\": \"Loopback1\",\n \"description\": \"My first RESTCONF loopback\",\n \"type\": \"iana-if-type:softwareLoopback\",\n \"enabled\": true,\n \"ietf-ip:ipv4\": {\n \"address\": [\n            {\n                \"ip\": \"10.1.1.1\",\n                \"netmask\": \"255.255.255.0\"\n            }\n        ]\n    },\n        \"ietf-ip:ipv6\": {}\n }\n}"
+				},
+				"url": {
+					"raw": "https://192.168.56.102/restconf/data/ietf-interfaces:interfaces/interface=Loopback1",
+					"protocol": "https",
+					"host": [
+						"192",
+						"168",
+						"56",
+						"102"
+					],
+					"path": [
+						"restconf",
+						"data",
+						"ietf-interfaces:interfaces",
+						"interface=Loopback1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
