@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "3a489df0-c624-482b-b90f-4f41624dd578",
+		"name": "implement-rest-apis-with-an-sdn-controller",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:58000/api/v1/ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"cisco\",\n    \"password\": \"cisco123!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:58000/api/v1/ticket",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "58000",
+					"path": [
+						"api",
+						"v1",
+						"ticket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:58000/api/v1/network-device",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "NC-91-2d27fc1b6b7d431c90a2-nbi",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:58000/api/v1/network-device",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "58000",
+					"path": [
+						"api",
+						"v1",
+						"network-device"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:58000/api/v1/host",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "NC-91-2d27fc1b6b7d431c90a2-nbi",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:58000/api/v1/host",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "58000",
+					"path": [
+						"api",
+						"v1",
+						"host"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "186ea92a-ab38-4c5e-8c97-702aea122fbf",
+		"name": "Rest API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET/books API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://library.demo.local/api/v1/books?includeISBN=true&sortBy=author",
+					"protocol": "http",
+					"host": [
+						"library",
+						"demo",
+						"local"
+					],
+					"path": [
+						"api",
+						"v1",
+						"books"
+					],
+					"query": [
+						{
+							"key": "includeISBN",
+							"value": "true"
+						},
+						{
+							"key": "sortBy",
+							"value": "author"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /logInviabasic API",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Cisco123!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "cisco",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://library.demo.local/api/v1/loginViaBasic",
+					"protocol": "http",
+					"host": [
+						"library",
+						"demo",
+						"local"
+					],
+					"path": [
+						"api",
+						"v1",
+						"loginViaBasic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST/books API",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "cisco|gVxEjheLV5EchgJ9zXjaa9qvp974T2KVt2cs3L2iO-Q",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-KEY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\": 4,\n\"title\": \"IPv6 Fundamentals\",\n\"author\": \"Rick Graziani\",\n\"isbn\": \"978 158144778\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://library.demo.local/api/v1/books",
+					"protocol": "http",
+					"host": [
+						"library",
+						"demo",
+						"local"
+					],
+					"path": [
+						"api",
+						"v1",
+						"books"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
