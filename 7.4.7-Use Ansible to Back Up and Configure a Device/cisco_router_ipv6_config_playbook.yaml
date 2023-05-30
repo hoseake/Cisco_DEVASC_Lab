@@ -1,0 +1,25 @@
+---
+- name: CONFIGURE IPv6 ADDRESSING
+  hosts: CSR1kv
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: SET IPv6 ADDRESS
+      ios_config:
+        parents: "interface GigabitEthernet1"
+        lines:
+          - description IPv6 ADDRESS
+          - ipv6 address 2001:DB8:ACAD:1::1/64
+          - ipv6 address FE80::1:1 link-local
+
+    - name: SHOW IPv6 INTERFACE BRIEF
+      ios_command:
+        commands:
+          - show ipv6 interface brief
+      register: output
+
+    - name: SAVE OUTPUT ./ios_configurations/
+      copy:
+        content: "{{ output.stdout[0] }}"
+        dest: "ios_configurations/IPv6_output_{{ inventory_hostname }}.txt"
