@@ -56,8 +56,9 @@ netconf_loopback = """
 </native>
 </config>
 """
-# netconf_reply = m.edit_config(target="running", config=netconf_loopback)
-# print(xml.dom.minidom.parseString(netconf_reply.xml).toprettyxml())
+netconf_reply = m.edit_config(target="running", config=netconf_loopback)
+print(xml.dom.minidom.parseString(netconf_reply.xml).toprettyxml())
+# --------------------------------------the code follow this line will effects this line code
 
 netconf_newloop = """
 <config>
