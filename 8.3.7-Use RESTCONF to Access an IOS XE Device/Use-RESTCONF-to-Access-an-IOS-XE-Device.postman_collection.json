@@ -6,7 +6,176 @@
 	},
 	"item": [
 		{
-			"name": "Send-GET-or-PUT-Requests",
+			"name": "Send_a_GET_1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "cisco123!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "cisco",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang-data+json",
+						"type": "default"
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang-data+json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://192.168.56.102/restconf/",
+					"protocol": "https",
+					"host": [
+						"192",
+						"168",
+						"56",
+						"102"
+					],
+					"path": [
+						"restconf",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send_a_GET_2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "cisco123!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "cisco",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang-data+json",
+						"type": "default"
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang-data+json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://192.168.56.102/restconf/data/ietf-interfaces:interfaces/",
+					"protocol": "https",
+					"host": [
+						"192",
+						"168",
+						"56",
+						"102"
+					],
+					"path": [
+						"restconf",
+						"data",
+						"ietf-interfaces:interfaces",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send_a_GET_3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "cisco123!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "cisco",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang-data+json",
+						"type": "default"
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang-data+json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://192.168.56.102/restconf/data/ietf-interfaces:interfaces/interface=GigabitEthernet1",
+					"protocol": "https",
+					"host": [
+						"192",
+						"168",
+						"56",
+						"102"
+					],
+					"path": [
+						"restconf",
+						"data",
+						"ietf-interfaces:interfaces",
+						"interface=GigabitEthernet1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send_a_PUT",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -38,7 +207,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n \"ietf-interfaces:interface\": {\n \"name\": \"Loopback1\",\n \"description\": \"My first RESTCONF loopback\",\n \"type\": \"iana-if-type:softwareLoopback\",\n \"enabled\": true,\n \"ietf-ip:ipv4\": {\n \"address\": [\n            {\n                \"ip\": \"10.1.1.1\",\n                \"netmask\": \"255.255.255.0\"\n            }\n        ]\n    },\n        \"ietf-ip:ipv6\": {}\n }\n}"
+					"raw": "{\n \"ietf-interfaces:interface\": {\n \"name\": \"Loopback1\",\n \"description\": \"My first RESTCONF loopback\",\n \"type\": \"iana-if-type:softwareLoopback\",\n \"enabled\": true,\n \"ietf-ip:ipv4\": {\n \"address\": [\n {\n \"ip\": \"10.1.1.1\",\n \"netmask\": \"255.255.255.0\"\n }\n ]\n },\n \"ietf-ip:ipv6\": {}\n }\n}"
 				},
 				"url": {
 					"raw": "https://192.168.56.102/restconf/data/ietf-interfaces:interfaces/interface=Loopback1",
