@@ -82,5 +82,6 @@ netconf_newloop = """
 """
 netconf_reply = m.edit_config(target="running", config=netconf_newloop)
 # It will return "RPCError: inconsistent value: Device refused one or more commands"
+# Because IP address is the same
 
 
