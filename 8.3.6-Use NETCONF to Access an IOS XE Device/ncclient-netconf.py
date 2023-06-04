@@ -70,7 +70,7 @@ netconf_newloop = """
  <ip>
  <address>
  <primary>
- <address>10.1.1.1</address>
+ <address>10.1.2.1</address>
  <mask>255.255.255.0</mask>
  </primary>
  </address>
@@ -81,7 +81,6 @@ netconf_newloop = """
 </config>
 """
 netconf_reply = m.edit_config(target="running", config=netconf_newloop)
-# It will return "RPCError: inconsistent value: Device refused one or more commands"
-# Because IP address is the same
+# It will return "RPCError: inconsistent value: Device refused one or more commands,If IP address is the same subnet"
 
 
